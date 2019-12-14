@@ -5,18 +5,9 @@
   src: url('../assets/fonts/lineto-circular-pro-book.woff') format('woff');
 }
 
-// @font-face {
-//   font-family: 'Inter UI';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url('../fonts/Inter-UI-Regular.woff2?v=2.1') format('woff2'),
-//     url('../fonts/Inter-UI-Regular.woff?v=2.1') format('woff');
-// }
-
-// @font-face {
-//   font-family: "Inter UI";
-//   font-style: bold;
-//   font-weight: 600;
-//   src: url("../fonts/Inter-UI-Bold.woff2?v=2.1") format("woff2"),
-//     url("../fonts/Inter-UI-Bold.woff?v=2.1") format("woff");
-// }
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/lineto-circular-pro-bold.woff') format('woff');
+}
