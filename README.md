@@ -4,10 +4,10 @@ My Personal React Boilerplate
 
 ## Features
 
-[x] Authentication
-[x] Role based authorization
-[x] Pagination
-[x] Crud Operation
+- [x] Authentication
+- [x] Role based authorization
+- [x] Pagination
+- [x] Crud Operation
 
 ## Demo
 
