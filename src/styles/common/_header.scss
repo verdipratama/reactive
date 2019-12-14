@@ -1,0 +1,12 @@
+.header {
+  background: $primary-color;
+  padding: 16px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    max-width: 74px;
+  }
+}
