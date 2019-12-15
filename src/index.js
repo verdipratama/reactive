@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="home" style={{ textAlign: 'center', marginTop: '200px' }}>
+        <div className="home">
           <h1>Welcome to Reactive</h1>
           <h2>Happy coding :)</h2>
         </div>

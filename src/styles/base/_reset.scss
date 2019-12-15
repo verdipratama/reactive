@@ -6,11 +6,12 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
   font-family: 'Inter UI', Arial, Helvetica, sans-serif;
   color: $text-color;
   background: $light-bg-color;
+  text-align: center;
+  padding: 25vh;
+  min-height: 100vh;
 }
 
 * {
@@ -21,19 +22,15 @@ body {
 }
 
 /**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin: 0.67em 0;
+}
+
+h2 {
+  color: #f6c945;
 }
