@@ -41,6 +41,11 @@ module.exports = merge.smart(webpackCommon, {
       }
     }
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   // @ts-ignore
   plugins: [new CleanWbepackPlugin(pathsToClean, cleanOptions), new OptimizeCssAssetsPlugin()]
 });
