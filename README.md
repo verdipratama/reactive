@@ -6,6 +6,7 @@ My Personal Faster React Boilerplate
 
 ## Features
 
+- [x] Redux Integration
 - [x] Authentication
 - [x] Role based authorization
 - [x] Pagination
