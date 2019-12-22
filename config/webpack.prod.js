@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// const CleanWbepackPlugin = require('clean-webpack-plugin');
+const CleanWbepackPlugin = require('clean-webpack-plugin');
 
 const webpackCommon = require('./webpack.common');
 
@@ -45,7 +45,7 @@ module.exports = merge.smart(webpackCommon, {
     hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
-  }
+  },
   // @ts-ignore
-  // plugins: [new CleanWbepackPlugin(pathsToClean, cleanOptions), new OptimizeCssAssetsPlugin()]
+  plugins: [new CleanWbepackPlugin(pathsToClean, cleanOptions), new OptimizeCssAssetsPlugin()]
 });
