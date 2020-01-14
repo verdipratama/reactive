@@ -14,7 +14,7 @@ My Personal Faster React Setup
 
 ## Demo
 
-Comming soon!
+Coming soon!
 
 ## Development
 
