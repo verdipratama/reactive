@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import { Provider } from 'react-redux';
 import store from './store';
 
+import routes from './routes';
 import './styles/index.scss';
-import Layout from './layouts/Layout';
 
 export default class App extends Component {
   render() {
@@ -36,7 +37,26 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <MuiThemeProvider theme={theme}>
-          <Layout />
+          <Router>
+            <div>
+              {routes.map((route, index) => {
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={props => {
+                      return (
+                        <route.layout {...props}>
+                          <route.component {...props} />
+                        </route.layout>
+                      );
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </Router>
         </MuiThemeProvider>
       </Provider>
     );
