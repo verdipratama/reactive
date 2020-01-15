@@ -1,6 +1,6 @@
 # Reactive
 
-My Personal Faster React Boilerplate
+My Personal Faster React Setup
 
 ![foo](https://raw.githubusercontent.com/verdipratama/reactive/master/assets/ss.png)
 
@@ -14,7 +14,7 @@ My Personal Faster React Boilerplate
 
 ## Demo
 
-Comming soon!
+Coming soon!
 
 ## Development
 
