@@ -7,6 +7,7 @@ const Wrapper = styled(Card)`
   margin: auto;
   background: ${props => props.theme.colors.primary};
 `;
+
 const Title = styled.h1`
   font-size: 2.5em;
   color: white;
@@ -25,14 +26,16 @@ const StyledButton = styled(Button)`
 export class Layout extends Component {
   render() {
     return (
-      <Container maxWidth="sm">
-        <Box my={4}>
-          <Wrapper>
-            <Title>Welcome to Reactive</Title>
-            <StyledButton>PRESS ME</StyledButton>
-          </Wrapper>
-        </Box>
-      </Container>
+      <React.Fragment>
+        <Container container>
+          <Box my={4}>
+            <Wrapper>
+              <Title>Welcome to Reactive</Title>
+              <StyledButton>PRESS ME</StyledButton>
+            </Wrapper>
+          </Box>
+        </Container>
+      </React.Fragment>
     );
   }
 }
