@@ -6,16 +6,9 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import { createMuiTheme } from '@material-ui/core/styles';
-// import theme from './theme';
-
-const theme = {
-  colors: {
-    primary: 'red'
-  }
-};
+import theme from './theme';
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,5 +1,18 @@
 import React from 'react';
-import { ListItem, ListItemText, Avatar, Paper, ListItemAvatar } from '@material-ui/core';
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  Avatar,
+  Paper,
+  Divider,
+  ListItemAvatar
+} from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 
 const Sidedrawer = () => {
   return (
@@ -10,6 +23,31 @@ const Sidedrawer = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
       }}
     >
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <SearchIcon />
+          </ListItemIcon>
+          <ListItemText>Search</ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText>Home</ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <LibraryMusicIcon />
+          </ListItemIcon>
+          <ListItemText>My Library</ListItemText>
+        </ListItem>
+
+        <Divider />
+        <ListItem>
+          <Typography variant="caption">Recently Played</Typography>
+        </ListItem>
+      </List>
       <div
         style={{
           position: 'absolute',
@@ -32,7 +70,7 @@ const Sidedrawer = () => {
           </ListItem>
         </a>
         <a
-          href="https://www.github.com/idanlo/react-spotify"
+          href="https://www.github.com/verdipratama/reactive"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: 'none' }}

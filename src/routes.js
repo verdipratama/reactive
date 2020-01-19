@@ -4,8 +4,6 @@
 // Layout Types
 import { DefaultLayout } from './layouts';
 
-// Route Views
-
 export default [
   {
     path: '/',
