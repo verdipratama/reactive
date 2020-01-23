@@ -14,7 +14,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 
-const Sidedrawer = () => {
+function Sidedrawer() {
   return (
     <Paper
       style={{
@@ -90,6 +90,6 @@ const Sidedrawer = () => {
       </div>
     </Paper>
   );
-};
+}
 
 export default Sidedrawer;
