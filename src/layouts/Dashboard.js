@@ -37,7 +37,7 @@ export class Dashboard extends Component {
             <Sidedrawer />
           </GridSidedrawer>
           <GridHomePage item lg={12}>
-            {/* HAHAHA */}
+            {/* TES */}
           </GridHomePage>
         </Grid>
       </React.Fragment>
