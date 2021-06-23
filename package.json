@@ -12,8 +12,8 @@
     "build": "cross-env NODE_ENV=production wp --env prod",
     "build:bundleanalyzer": "yarn build --addons bundleanalyzer",
     "test": "jest -c --watchAll --coverage --setupTestFrameworkScriptFile=./src/setupTest.js",
-    "lint-staged": "lint-staged",
     "reset": "rm -rf dist coverage node_modules",
+    "lint-staged": "lint-staged",
     "serve": "serve -s dist"
   },
   "dependencies": {
