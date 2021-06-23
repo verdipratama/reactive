@@ -1,26 +1,75 @@
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
+const commonPaths = require('./common-paths');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
 
-const webpackCommon = require('./webpack.common');
+const port = process.env.PORT || 3000;
 
-module.exports = merge.smart(webpackCommon, {
+const config = {
   mode: 'development',
+  entry: {
+    app: [`${commonPaths.appEntry}/index.js`, 'webpack-plugin-serve/client'],
+  },
   output: {
-    publicPath: '/', // deploy on server with /app/ folder name
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, '../docs')
+    filename: '[name].[fullhash].js',
   },
-  devServer: {
-    hot: true,
-    open: true,
-    historyApiFallback: true,
-    overlay: true,
-    contentBase: path.join(__dirname, 'docs'),
-    host: 'localhost',
-    port: 1992,
-    publicPath: '/'
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [require('react-refresh/babel')].filter(Boolean),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              esModule: true,
+              modules: {
+                namedExport: true,
+              },
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: true,
+              modules: {
+                compileType: 'module',
+                mode: 'local',
+                exportLocalsConvention: 'camelCaseOnly',
+                namedExport: true,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
-  devtool: 'cheap-eval-source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-});
+  plugins: [
+    new ReactRefreshWebpackPlugin({
+      overlay: { sockIntegration: 'wps' },
+    }),
+    new Serve({
+      historyFallback: true,
+      liveReload: false,
+      hmr: true,
+      host: 'localhost',
+      port: port,
+      open: true,
+      static: commonPaths.outputPath,
+    }),
+  ],
+  watch: true,
+};
+
+module.exports = config;

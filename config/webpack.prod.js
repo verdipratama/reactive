@@ -1,51 +1,60 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanWbepackPlugin = require('clean-webpack-plugin');
+const commonPaths = require('./common-paths');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const webpackCommon = require('./webpack.common');
-
-const pathsToClean = ['docs'];
-const cleanOptions = {
-  root: path.resolve(__dirname, '../')
+const config = {
+  mode: 'production',
+  entry: {
+    app: [`${commonPaths.appEntry}/index.js`],
+  },
+  output: {
+    filename: 'static/[name].[fullhash].js',
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+              modules: {
+                namedExport: true,
+              },
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              sourceMap: true,
+              esModule: true,
+              modules: {
+                compileType: 'module',
+                mode: 'local',
+                exportLocalsConvention: 'camelCaseOnly',
+                namedExport: true,
+              },
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[fullhash].css',
+    }),
+  ],
 };
 
-module.exports = merge.smart(webpackCommon, {
-  output: {
-    filename: 'main.[chunkhash].js',
-    path: path.resolve(__dirname, '../docs'),
-    publicPath: '/'
-  },
-  mode: 'production',
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          mangle: {
-            keep_fnames: true
-          }
-        }
-      })
-    ],
-    runtimeChunk: true,
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor_app',
-          chunks: 'all',
-          minChunks: 2
-        }
-      }
-    }
-  },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000
-  },
-  // @ts-ignore
-  plugins: [new CleanWbepackPlugin(pathsToClean, cleanOptions), new OptimizeCssAssetsPlugin()]
-});
+module.exports = config;

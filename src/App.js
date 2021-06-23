@@ -1,28 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import routes from './routes';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Home, AboutPage, ErrorPage } from './components/pages';
 
 function App() {
   return (
     <Router>
-      <div>
-        {routes.map((route, index) => {
-          return (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              component={props => {
-                return (
-                  <route.layout {...props}>
-                    <route.component {...props} />
-                  </route.layout>
-                );
-              }}
-            />
-          );
-        })}
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route component={ErrorPage} />
+      </Switch>
     </Router>
   );
 }
