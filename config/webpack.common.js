@@ -12,7 +12,7 @@ const config = {
       cacheGroups: {
         vendor: {
           chunks: 'initial',
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/]@emotion-([\S]+)[\\/]/,
           name: 'vendor',
           enforce: true,
         },
