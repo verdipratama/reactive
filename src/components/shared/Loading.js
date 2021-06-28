@@ -1,6 +1,7 @@
 import React from 'react';
-import { Loader } from 'semantic-ui-react';
 
-const Loading = () => <Loader active size="massive" />;
+const Loading = () => {
+  return <div className="loader">Loading...</div>;
+};
 
 export default Loading;

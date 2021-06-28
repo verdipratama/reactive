@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React starter boilerplate with Hot Module Replacement, React 17 and Webpack 5",
   "main": "index.js",
-  "author": "Verdi Pratama <@verdipratama>",
+  "author": "Verdi Pratama <verdipratama@yahoo.com>",
   "license": "MIT",
   "scripts": {
     "dev": "yarn prebuild && wp --env dev",
@@ -17,13 +17,14 @@
     "serve": "serve -s dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@mverissimoo/emotion-grid": "^1.7.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-loadable": "^5.5.0",
-    "react-router-dom": "^5.2.0",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
@@ -74,7 +75,6 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,scss,less}": [
-      "prettier --write",
       "git add"
     ]
   },
@@ -90,7 +90,6 @@
     "react 17",
     "boilerplate",
     "semantic ui",
-    "semantic ui react",
     "webpack 5",
     "webpack",
     "react fast refresh",

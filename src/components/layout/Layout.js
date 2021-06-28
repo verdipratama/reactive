@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { Children } from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Container, Divider, Icon } from 'semantic-ui-react';
+import { ThemeProvider, Global } from '@emotion/react';
+import { theme, globalStyle } from '../../styles';
 
-import { pullRight, h1 } from './layout.css';
+import { Container, Row, Col } from '@mverissimoo/emotion-grid';
 
 const Layout = ({ children }) => {
   return (
-    <Container>
-      <Link to="/">
-        <Header as="h1" className={h1}>
-          Reactive - React Starter Kit
-        </Header>
-      </Link>
-      {children}
-      <Divider />
-      <p className={pullRight}>
-        Made with <Icon name="heart" color="red" /> by Verdi Pratama
-      </p>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Global styles={globalStyle} />
+      <Container>
+        <Row>
+          <Col sm={8} lg={12}>
+            <Link to="/">
+              <h1>REACTIVE</h1>
+            </Link>
+            <Row>
+              <Col sm={4} lg={6}>
+                {children}
+              </Col>
+              <Col sm={4} lg={6}>
+                <h2>About Myself</h2>
+                <p>
+                  Hey, this is my homepage, so I have to say something about
+                  myself. Sometimes it is hard to introduce yourself because you
+                  know yourself so well that you do not know where to start
+                  with.
+                </p>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </ThemeProvider>
   );
 };
 

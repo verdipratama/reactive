@@ -12,7 +12,7 @@ const config = {
       cacheGroups: {
         vendor: {
           chunks: 'initial',
-          test: /[\\/]node_modules[\\/]semantic-ui-([\S]+)[\\/]/,
+          test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
           enforce: true,
         },

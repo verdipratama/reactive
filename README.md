@@ -8,7 +8,6 @@
 - React Fast Refresh
 - React Router 5
 - Webpack 5
-- Semantic UI as the CSS Framework
 - CSS Autoprefixer
 - CSS Modules with SourceMap
 - @babel/plugin-proposal-class-properties
