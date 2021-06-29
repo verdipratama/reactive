@@ -14,6 +14,8 @@
 - @babel/plugin-syntax-dynamic-import
 - Code splitting by Route and Vendor
 - Webpack Bundle Analyzer
+- CSS in JS with @emotion.js
+- Testing with Jest and Enzyme
 
 ### Usage
 
@@ -52,3 +54,13 @@ Run on the production oprimized build
 ```
 $ yarn build:bundleanalyzer
 ```
+
+## Unit testing with Jest and Enzyme
+
+Run testing watch mode
+
+```
+$ yarn test
+```
+
+Will create a `coverage` directory containing your testing compiled code.
