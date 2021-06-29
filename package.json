@@ -14,7 +14,8 @@
     "test": "jest -c --watchAll --coverage --setupTestFrameworkScriptFile=./src/setupTest.js",
     "reset": "rm -rf dist coverage node_modules",
     "lint-staged": "lint-staged",
-    "serve": "serve -s dist"
+    "serve": "serve -s dist",
+    "prod:gcp": "./build.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
