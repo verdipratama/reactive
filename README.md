@@ -1,6 +1,6 @@
 # @verdipratama/reactive
 
-Start your Reactive Projects in seconds.
+Start your reactive projects in seconds.
 
 # Requirements
 
