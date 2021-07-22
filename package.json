@@ -1,99 +1,32 @@
 {
-  "name": "reactive-v2",
+  "name": "@verdipratama/reactive",
   "version": "1.0.0",
-  "description": "React starter boilerplate with Hot Module Replacement, React 17 and Webpack 5",
-  "main": "index.js",
-  "author": "Verdi Pratama <verdipratama@yahoo.com>",
+  "description": "Start your reactive projects in seconds.",
+  "main": "lib/cli.js",
+  "repository": "git@github.com:verdipratama/reactive.git",
+  "author": "verdipratama <verdipratama@icloud.com>",
   "license": "MIT",
-  "scripts": {
-    "dev": "yarn prebuild && wp --env dev",
-    "dev:bundleanalyzer": "yarn prebuild && yarn dev --addons bundleanalyzer",
-    "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production wp --env prod",
-    "build:bundleanalyzer": "yarn build --addons bundleanalyzer",
-    "test": "jest -c --watchAll --coverage --setupTestFrameworkScriptFile=./src/setupTest.js",
-    "reset": "rm -rf dist coverage node_modules",
-    "lint-staged": "lint-staged",
-    "serve": "serve -s dist",
-    "prod:gcp": "./build.sh"
+  "engines": {
+    "node": "12.x.x || 14.x.x",
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.4"
+  },
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@mverissimoo/emotion-grid": "^1.7.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-loadable": "^5.5.0",
-    "react-router-dom": "^5.2.0"
+    "cac": "^6.7.3",
+    "chalk": "^4.1.1",
+    "git-clone": "^0.1.0",
+    "rimraf": "^3.0.2",
+    "sao": "^1.7.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
-    "@hot-loader/react-dom": "^17.0.1",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "autoprefixer": "^10.2.6",
-    "babel-jest": "^26.6.3",
-    "babel-loader": "^8.2.2",
-    "chalk": "^4.1.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^5.2.6",
-    "cssnano": "^4.1.10",
-    "html-webpack-plugin": "^5.0.0",
-    "husky": "4.2.3",
-    "jest": "^26.6.3",
-    "jest-css-modules": "^2.1.0",
-    "lint-staged": "^10.5.4",
-    "mini-css-extract-plugin": "^1.6.0",
-    "postcss-loader": "^5.0.0",
-    "postcss-preset-env": "^6.7.0",
-    "react-hot-loader": "^4.13.0",
-    "react-refresh": "^0.9.0",
-    "react-test-renderer": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.21.2",
-    "webpack-bundle-analyzer": "^4.4.0",
-    "webpack-merge": "^5.7.3",
-    "webpack-nano": "^1.1.1",
-    "webpack-plugin-serve": "^1.2.1"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,scss,less}": [
-      "git add"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/verdipratama/reactive.git"
-  },
-  "bugs": {
-    "url": "https://github.com/verdipratama/reactive/issues"
-  },
-  "keywords": [
-    "react",
-    "react 17",
-    "boilerplate",
-    "semantic ui",
-    "webpack 5",
-    "webpack",
-    "react fast refresh",
-    "hmr"
-  ]
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^7.0.1"
+  }
 }
