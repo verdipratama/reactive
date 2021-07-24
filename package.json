@@ -1,6 +1,6 @@
 {
   "name": "@verdipratama/reactive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Start your reactive projects in seconds.",
   "bin": "lib/cli.js",
   "repository": "git@github.com:verdipratama/reactive.git",
