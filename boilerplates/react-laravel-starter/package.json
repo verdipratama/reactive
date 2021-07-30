@@ -22,7 +22,7 @@
     "axios": "^0.21",
     "bootstrap": "^4.6.0",
     "laravel-mix": "^6.0.6",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "postcss": "^8.2.4",
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.1",
