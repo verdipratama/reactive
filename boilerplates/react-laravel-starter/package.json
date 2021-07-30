@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "scripts": {
+    "tailwind:build": "NODE_ENV=production postcss resources/css/custom.css -o resources/css/custom.output.css",
+    "tailwind:dev": "postcss resources/css/custom.css -o resources/css/custom.output.css",
+    "prestart": "npm run tailwind:dev",
+    "prebuild": "npm run tailwind:build",
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.10",
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.3",
+    "axios": "^0.21",
+    "bootstrap": "^4.6.0",
+    "laravel-mix": "^6.0.6",
+    "lodash": "^4.17.19",
+    "postcss": "^8.2.4",
+    "postcss-import": "^14.0.0",
+    "postcss-nesting": "^7.0.1",
+    "resolve-url-loader": "3.1.0",
+    "sass": "^1.32.5",
+    "sass-loader": "8.*",
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-border-gradients": "^2.0.3",
+    "tailwindcss-gradients": "^3.0.0"
+  },
+  "dependencies": {
+    "@inertiajs/inertia": "^0.8.4",
+    "@inertiajs/inertia-react": "^0.5.2",
+    "@inertiajs/progress": "^0.2.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-meta-tags": "^1.0.1"
+  }
+}

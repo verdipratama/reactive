@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300&display=swap');
+
+@font-face {
+  font-display: swap !important;
+  font-family: 'Geo';
+  font-display: swap; /* or block, auto, fallback, optional */
+  src: url('/fonts/geomanist-regular-webfont.woff2') format('woff2'),
+    url('/fonts/geomanist-regular-webfont.woff') format('woff');
+}
+@font-face {
+  font-display: swap !important;
+  font-family: 'Geo Bold';
+  font-display: swap; /* or block, auto, fallback, optional */
+  src: url('/fonts/geomanist-bold-webfont.woff2') format('woff2'),
+    url('/fonts/geomanist-bold-webfont.woff') format('woff');
+}
+@font-face {
+  font-display: swap !important;
+  font-family: 'Geo Ultra';
+  font-display: swap; /* or block, auto, fallback, optional */
+  src: url('/fonts/geomanist-ultra-webfont.woff2') format('woff2'),
+    url('/fonts/geomanist-ultra-webfont.woff') format('woff');
+}
+@font-face {
+  font-display: swap !important;
+  font-family: 'Geo Light';
+  font-display: swap; /* or block, auto, fallback, optional */
+  src: url('/fonts/geomanist-light-webfont.woff2') format('woff2'),
+    url('/fonts/geomanist-light-webfont.woff') format('woff');
+}
+@font-face {
+  font-display: swap !important;
+  font-family: 'Geo Extralight';
+  font-display: swap; /* or block, auto, fallback, optional */
+  src: url('/fonts/geomanist-extralight-webfont.woff2') format('woff2'),
+    url('/fonts/geomanist-extralight-webfont.woff') format('woff');
+}

@@ -1,0 +1,18 @@
+html {
+  @apply bg-light-2;
+  &.dark {
+    @apply bg-dark-1;
+    body {
+      @apply text-gray-300;
+      *,
+      ::before,
+      ::after {
+        @apply border-dark-3;
+      }
+    }
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    @apply overflow-x-hidden font-geo text-sm text-gray-800;
+  }
+}

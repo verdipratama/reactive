@@ -1,0 +1,29 @@
+/* external styles */
+// @import '~bootstrap/scss/bootstrap';
+
+/*******************
+Components
+********************/
+@import 'components/custom';
+@import 'components/tailwind';
+
+// @import 'components/app';
+// @import 'components/box';
+// @import 'components/global';
+// @import 'components/scrollbar';
+
+/*******************
+Breakpoint
+********************/
+@import 'base/breakpoint';
+
+/*******************
+Typography
+********************/
+@import 'base/typography';
+
+/*******************
+Utilities / Animation
+********************/
+@import 'utilities/intro';
+// @import 'utilities/zoom-in';
